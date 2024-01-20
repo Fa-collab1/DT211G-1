@@ -1,0 +1,20 @@
+{
+  "name": "dt211g-1",
+  "version": "1.0.0",
+  "description": "Moment 1 i kursen DT2111G VT2024 (MiUn)",
+  "main": "index.js",
+  "source":"src/index.html",
+  "scripts": {
+    "start": "parcel",
+    "build": "parcel build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "automation"
+  ],
+  "author": "joni2307",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "latest"
+  }
+}
