@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,12 +12,80 @@
     <nav id="mainMenu">
         <button id="menuButton">Meny</button>
         <div id="dropdownContent" class="dropdown-content">
-            <a href="index.html">InfoTEST</a>
-            <a href="pictures.html">Pictures</a>
-            <a href="history.html">History</a>
+            <a href="index.html">Informationssida</a>
+            <a href="bilder.html">Bildgalleri</a>
+            <a href="process.html">Publiceringsprocess</a>
         </div>
     </nav>
 
     <script src="js/menu.js"></script>
 </body>
+
+<h1>Projektöversikt</h1>
+<p>Denna webbplats är en del av kursen "Frontend-baserad webbutveckling" och tjänar som ett praktiskt projekt för att utforska användningen av NodeJS inom webbutveckling.</p>
+
+<h2>Syfte och Mål</h2>
+<p>Målet med detta projekt är att utforska hur NodeJS kan effektivisera webbutvecklingsprocessen. Genom att integrera NodeJS-baserade verktyg, strävar vi efter att uppnå följande:</p>
+<ul>
+  <li>Automatisering av repetitiva uppgifter för att effektivisera utvecklingen av webbplatser.</li>
+  <li>Skapa en automatiserad utvecklingsmiljö som använder Git och NodeJs, vilket möjliggör automatisk publicering vid uppdateringar av webbplatsen eller Git-repositoriet.</li>
+  <li>Implementera automatisk transpilering och minifiering av CSS, HTML och JavaScript, samt automatisk optimering av grafikfiler för förbättrad prestanda.</li>
+</ul>
+
+<h2>Webbplatsens Struktur</h2>
+<ul>
+  <li><h3>Informationssida</h3>
+  <p>Denna startsida innehåller grundläggande information om projektet, dess syfte och de tekniker som används.</p></li>
+
+  <li><h3>Bildgalleri</h3>
+  <p>En dedikerad sida som visar ett urval av minst fem fotografier, demonstrerande hantering och optimering av bilder.</p></li>
+
+  <li><h3>Publiceringsprocess</h3>
+  <p>En detaljerad sida som beskriver den arbetsprocess jag har utvecklat och använt för att skapa och underhålla denna webbplats, inklusive steg för automatisering och kontinuerlig integration.</p></li>
+</ul>
+
+<h2>Skaparen och dess skapare</h2>
+<!-- <picture>
+    <source srcset="pictures/son_och_moder.webp" type="image/webp">
+    <source srcset="pictures/son_och_moder.jpg" type="image/jpeg">
+    <img src="pictures/son_och_moder.jpg" alt="Son och moder">
+</picture> -->
+
+<picture>
+    <!-- AVIF format -->
+    <source 
+        srcset="pictures/image.jpg?as=avif&width=320 320w,
+                pictures/image.jpg?as=avif&width=480 480w,
+                pictures/image.jpg?as=avif&width=800 800w"
+        sizes="(max-width: 600px) 320px,
+               (max-width: 900px) 480px,
+               800px"
+        type="image/avif" />
+
+    <!-- WebP format -->
+    <source 
+        srcset="pictures/image.jpg?as=webp&width=320 320w,
+                pictures/image.jpg?as=webp&width=480 480w,
+                pictures/image.jpg?as=webp&width=800 800w"
+        sizes="(max-width: 600px) 320px,
+               (max-width: 900px) 480px,
+               800px"
+        type="image/webp" />
+
+    <!-- JPEG format -->
+    <source 
+        srcset="pictures/image.jpg?width=320 320w,
+                pictures/image.jpg?width=480 480w,
+                pictures/image.jpg?width=800 800w"
+        sizes="(max-width: 600px) 320px,
+               (max-width: 900px) 480px,
+               800px"
+        type="image/jpeg" />
+
+    <!-- Fallback image -->
+    <img src="pictures/image.jpg?width=800" alt="test image" />
+</picture>
+
+
+
 </html>
