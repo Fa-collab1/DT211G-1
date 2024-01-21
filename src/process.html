@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>joni2307 DT211G-1</title>
+    <title>Publiceringsprocess - joni2307 DT211G-1</title>
     <link rel="stylesheet" type="text/css" href="css/menu.css">
     <link rel="stylesheet" type="text/css" href="css/general.css">
 </head>
@@ -17,49 +17,106 @@
             <a href="process.html">Publiceringsprocess</a>
         </div>
     </nav>
-    stegen innan detta också!!!!
-    node --version
-    (visade sig vara: v18.17.1)
-    (installerade nyare version efter det)
-    npm init
-    package name: (dt211g-1) 
-version: (1.0.0) 
-description: Moment 1 i kursen DT2111G VT2024 (MiUn)
-entry point: (index.js) 
-test command: 
-git repository: 
-keywords: automation
-author: joni2307
-license: (ISC) 
-About to write to /Users/jonasnilsson/Library/CloudStorage/OneDrive-Personal/MiUn/DT211G - Front-End B Wu/DT211G-1/package.json:
-
-{
-  "name": "dt211g-1",
-  "version": "1.0.0",
-  "description": "Moment 1 i kursen DT2111G VT2024 (MiUn)",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "automation"
-  ],
-  "author": "joni2307",
-  "license": "ISC"
-}
-
-
-Is this OK? (yes) 
-
-
-         
-    sudo npm install netlify-cli -g  // install netlify globally
-    sudo npm install netlify-cli --save-dev
-    sudo netlify login
-    sudo netlify init  
-    npm install sharp@^0.31.1 --save-dev
-    npm run start
-
     <script src="js/menu.js"></script>
-</body>
-</html>
+
+    <!DOCTYPE html>
+<html>
+<head>
+    <title>Publiceringsprocess för DT211G-1</title>
+</head>
+<body>
+  <!DOCTYPE html>
+  <html>
+  <head>
+      <title>Publiceringsprocess för DT211G-1</title>
+  </head>
+  <body>
+      <h1>Publiceringsprocess för DT211G-1</h1>
+  
+      <h2>NodeJS</h2>
+      <ol>
+          <li>
+              <p>Kontrollera Node.js version och uppdatera vid behov:</p>
+              <pre><code>node --version</code></pre>
+              <ul>
+                  <li>Ursprunglig version: v18.17.1</li>
+                  <li>Uppdaterade till nyare version efter detta.</li>                
+              </ul>
+          </li>
+        </ol>
+          <h2>Initiera npm</h2>
+          <ol> 
+          <li>Skapa en projektmap för projektet och navigerade dit.</li>
+            <pre><code>npm init</code></pre>
+              <ul>
+                  <li>Paketnamn: dt211g-1</li>
+                  <li>Beskrivning: Moment 1 i kursen DT2111G VT2024 (MiUn)</li>
+                  <li>Nyckelord: automation</li>
+                  <li>Författare: joni2307</li>
+              </ul>
+          </li>
+      </ol>
+  
+      <h2>Konfigurera Parcel</h2>
+      <ol>
+          <li>
+            <p>Installera Parcel</p>
+            <pre><code>sudo npm install parcel --save-dev</code></pre>
+            </li>
+            <li>
+            <p>Installera Sharp</p>
+            <pre><code>sudo npm install sharp@^0.31.1 --save-dev --force</code></pre>
+              <p>Notera: <code>sharp</code> används för bildbearbetning. Kontrollera om det behövs eller om det bara krånglade nu</p>
+          </li>
+      </ol>
+  
+      <h2>Starta Projektet</h2>
+      <ol>
+        <li><p>Starta projektet i mappen eller inifrån VS Code.</p>
+        <pre><code>npm run start</code></pre></li>
+      </ol>
+
+  
+      <h2>Ansluta till GitHub</h2>
+      <ol>
+          <li>
+              <p>Skapa GitHub-repositorium från VS Code.</p>
+          </li>
+          <li>
+              <p>Skapa och byt till utvecklingsbranch <code>dev</code></p>
+              
+          </li>
+          <li>
+              <p>Gör commits och pusha ändringar till GitHub <code>dev</code> från VS Code</p>
+          </li>
+          <li>
+            <p>När man har någonting att publicera så mergar man över <code>dev</code> till <code>main</code></p>
+        </li>
+
+        </ol>
+  
+      <h2>Publicera på Netlify</h2>
+      <ol>
+          <li>
+              <p>Koppla GitHub-repositoriet till Netlify:</p>
+              <p>Skapa en ny site på Netlify och välj det önskade GitHub-repositoriet.</p>
+          </li>
+          <li>
+              <p>Konfigurera bygg- och publiceringsinställningar på Netlify:</p>
+              <p>Ange lämpliga byggkommandon och publiceringskatalog i Netlify:s inställningar.</p>
+          </li>
+          <li>
+              <p>Automatisk publicering vid push till GitHub:</p>
+              <p>Ställ in Netlify för automatisk publicering vid varje push till main på det kopplade GitHub-repositoriet.</p>
+          </li>
+          <li>
+            <p>Installera och konfigurera Netlify CLI:</p>
+            <pre><code>sudo npm install netlify-cli -g
+sudo npm install netlify-cli --save-dev
+sudo netlify login
+sudo netlify init</code></pre>
+        </li>
+
+        </ol>
+  </body>
+  </html>
