@@ -1,0 +1,26 @@
+#picture_gallery {
+    display: flex; /* Använder flexbox */
+    flex-wrap: wrap; /* Tillåter radbrytning av element */
+    justify-content: center; /* Centrerar elementen horisontellt */
+    gap: 1.7vw; /* Ger utrymme mellan bilderna */
+}
+
+/* Stil för varje picture-element */
+#picture_gallery picture {
+    flex: 1 1 300px; /* Flexibel storlek med bas på 300px */
+    position: relative; /* För positionering av child-element */
+}
+
+/* Stil för bilder inuti picture-element */
+#picture_gallery img {
+    width: 100%; /* Bredd sätts till 100% av föräldern */
+    height: auto; /* Höjd är automatisk för att behålla aspektratio */
+    transition: transform 0.3s ease; /* Mjuk övergångseffekt för transformering */
+    border: 0.1vw solid black; /* Ram runt bilderna */
+   
+    }
+
+/* Hover-effekt för bilder */
+#picture_gallery picture:hover img {
+    transform: scale(1.05); /* Förstorar bilden lite vid hover */
+}
