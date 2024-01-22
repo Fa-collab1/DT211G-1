@@ -19,18 +19,6 @@
     </nav>
     <script src="js/menu.js"></script>
 
-    <!DOCTYPE html>
-<html>
-<head>
-    <title>Publiceringsprocess för DT211G-1</title>
-</head>
-<body>
-  <!DOCTYPE html>
-  <html>
-  <head>
-      <title>Publiceringsprocess för DT211G-1</title>
-  </head>
-  <body>
       <h1>Publiceringsprocess för DT211G-1</h1>
   
       <h2>NodeJS</h2>
@@ -39,14 +27,13 @@
               <p>Kontrollera Node.js version och uppdatera vid behov:</p>
               <pre><code>node --version</code></pre>
               <ul>
-                  <li>Ursprunglig version: v18.17.1</li>
-                  <li>Uppdaterade till nyare version efter detta.</li>                
+                  <li>Ursprunglig version: v18.17.1 <i>(Jag uppdaterade till nyare version efter detta.)</i></li>
               </ul>
           </li>
         </ol>
           <h2>Initiera npm</h2>
           <ol> 
-          <li>Skapa en projektmap för projektet och navigerade dit.</li>
+          <li>Skapa en projektmap för projektet och navigerade dit.<br>
             <pre><code>npm init</code></pre>
               <ul>
                   <li>Paketnamn: dt211g-1</li>
@@ -54,7 +41,7 @@
                   <li>Nyckelord: automation</li>
                   <li>Författare: joni2307</li>
               </ul>
-          </li>
+            </li>
       </ol>
   
       <h2>Konfigurera Parcel</h2>
@@ -62,11 +49,11 @@
           <li>
             <p>Installera Parcel</p>
             <pre><code>sudo npm install parcel --save-dev</code></pre>
+            <pre><code>sudo npm audit fix --force</code></pre>
             </li>
             <li>
             <p>Installera Sharp</p>
             <pre><code>sudo npm install sharp@^0.31.1 --save-dev --force</code></pre>
-              <p>Notera: <code>sharp</code> används för bildbearbetning. Kontrollera om det behövs eller om det bara krånglade nu</p>
           </li>
       </ol>
   
@@ -77,14 +64,13 @@
       </ol>
 
   
-      <h2>Ansluta till GitHub</h2>
+      <h2>Anslut till GitHub</h2>
       <ol>
           <li>
               <p>Skapa GitHub-repositorium från VS Code.</p>
           </li>
           <li>
               <p>Skapa och byt till utvecklingsbranch <code>dev</code></p>
-              
           </li>
           <li>
               <p>Gör commits och pusha ändringar till GitHub <code>dev</code> från VS Code</p>
@@ -118,5 +104,73 @@ sudo netlify init</code></pre>
         </li>
 
         </ol>
+
+        <h2>Bildhantering</h2>
+<p>Jag tar en jpg-bild i med bra kvalitet och gör en sådan här hantering. (måste nog säga att det är mycket att skriva för att göra detta automatiskt dock).</p>
+
+<pre><code>
+    &lt;picture&gt;
+    &lt;!-- AVIF format --&gt;
+    &lt;source 
+        srcset="pictures/sovaute.jpg?as=avif&amp;width=320 320w,
+                pictures/sovaute.jpg?as=avif&amp;width=480 480w,
+                pictures/sovaute.jpg?as=avif&amp;width=800 800w"
+        sizes="(max-width: 600px) 320px,
+               (max-width: 900px) 480px,
+               800px"
+        type="image/avif" /&gt;
+
+    &lt;!-- WebP format --&gt;
+    &lt;source
+        srcset="pictures/sovaute.jpg?as=webp&amp;width=320 320w,
+                pictures/sovaute.jpg?as=webp&amp;width=480 480w,
+                pictures/sovaute.jpg?as=webp&amp;width=800 800w"
+        sizes="(max-width: 600px) 320px,
+               (max-width: 900px) 480px,
+               800px"
+        type="image/webp" /&gt;
+
+    &lt;!-- JPEG format --&gt;
+    &lt;source 
+        srcset="pictures/sovaute.jpg?width=320 320w,
+                pictures/sovaute.jpg?width=480 480w,
+                pictures/sovaute.jpg?width=800 800w"
+        sizes="(max-width: 600px) 320px,
+               (max-width: 900px) 480px,
+               800px"
+        type="image/jpeg" /&gt;
+
+    &lt;img src="pictures/sovaute.jpg?width=800" alt="här kan man sova utomhus" title="här kan man sova utomhus" /&gt;
+&lt;/picture&gt;
+</code></pre>
+
+        <p>Parcels sharp-tjänst kommer sedan att konvertera till önskade format och storlekar nu på ett responsivt sätt. Optimering sker enligt filen sharp.config.json:</p>
+        <pre><code>{
+            "jpeg": {
+              "quality": 75
+            },
+            "webp": {
+              "nearLossless": true
+            },
+            "avif": {
+                "nearLossless": true
+              },
+            "png": {
+              "palette": true
+            }
+        }</code></pre>
+        
+        <h2>Transpilering och minifiering</h2>
+        <p>Parcel kommer automatiskt nu att minifiera HTML, CSS och JavaScript-filer. JavaScript-filerna kommer även att transpileras enligt nedan i package.json:</p>
+        <pre><code>"browserslist": [
+            "> 0.5%",
+            "last 2 versions",
+            "not dead",
+            "not IE 11"
+        ]</code></pre>
+  
+        <h2>Kopiering av filer till dist-katalog</h2>
+        <p>Parcel kommer automatiskt att kopiera filer som bearbetas fram från originalen som ligger i projektets src-katalog till dist-katalogen.</p>
+
   </body>
   </html>

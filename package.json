@@ -4,8 +4,8 @@
   "description": "Moment 1 i kursen DT2111G VT2024 (MiUn)",
   "source": "src/index.html",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build",
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
