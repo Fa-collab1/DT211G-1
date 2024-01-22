@@ -104,8 +104,34 @@ sudo netlify init</code></pre>
         </li>
 
         </ol>
-
-        <h2>Bildhantering</h2>
+        <h2>Publicera från dev till main-branchen</h2>
+        <ol>
+            <li>
+                <p>Öppna terminalen i VS Code</p>
+            </li>
+            <li>
+                <p>Byt till dev-branchen</p>
+                <pre><code>git checkout dev</code></pre>
+            </li>
+            <li>
+                <p>Pulla senaste ändringarna (valfritt)</p>
+                <pre><code>git pull</code></pre>
+            </li>
+            <li>
+                <p>Byt till main-branchen</p>
+                <pre><code>git checkout main</code></pre>
+            </li>
+            <li>
+                <p>Förena dev med main</p>
+                <pre><code>git merge dev</code></pre>
+            </li>
+            <li>
+                <p>Pusha till GitHub</p>
+                <pre><code>git push origin main</code></pre>
+            </li>
+        </ol>
+        
+<h2>Bildhantering</h2>
 <p>Jag tar en jpg-bild i med bra kvalitet och gör en sådan här hantering. (måste nog säga att det är mycket att skriva för att göra detta automatiskt dock).</p>
 
 <pre><code>
